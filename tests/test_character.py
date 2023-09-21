@@ -23,3 +23,10 @@ class TestCharacterCurrentPosition(TestCase):
         test_char.changePosition(test_pos)
         self.assertEqual(test_char.currentPosition.x_coordinate,TEST_X)
         self.assertEqual(test_char.currentPosition.y_coordinate,TEST_Y)
+
+class TestEnterMap(TestCase):
+    def test_enter_map(self):
+        test_map = DummyMap()
+        test_char = Character("")
+        test_char.enterMap(test_map)
+        self.assertTrue(test_map.isPositionValid(test_char.currentPosition))
