@@ -37,6 +37,9 @@ class Map:
         else:
             return position
 
+    def getTotalPositions(self):
+        return X_DIMENSION * Y_DIMENSION
+
 class DummyMap(Map):
 
     def __init(self):

@@ -128,3 +128,8 @@ class TestCalculateNewPositionWestBoundary(TestCase):
         print("Test Position is X:" + str(test_position.x_coordinate) + " Y: " + str(test_position.y_coordinate))
         print("New Position is X:" + str(test_new_position.x_coordinate) + " Y: " + str(test_new_position.y_coordinate))
         self.assertEqual(test_position.x_coordinate, test_new_position.x_coordinate)
+
+class TestGetTotalPositions(TestCase):
+    def test_get_total_positions(self):
+        test_map = Map()
+        self.assertEqual(test_map.getTotalPositions(),100)
