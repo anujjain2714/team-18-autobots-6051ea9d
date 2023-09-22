@@ -35,7 +35,48 @@ class TestPositionInvalid(TestCase):
 
 class TestCalculateNewPositionNorth(TestCase):
     def test_calc_new_position_north(self):
+        #Assumption: this is in the centre of map, not near a boundary
         ARBITRARY_X = 5
         ARBITRARY_Y = 5
+        test_map = Map()
         test_position = Position(ARBITRARY_X, ARBITRARY_Y)
+        test_new_position = test_map.calculateNewPosition(test_position, 'n')
+        print("Test Position is X:" + str(test_position.x_coordinate) + " Y: " + str(test_position.y_coordinate))
+        print("New Position is X:" + str(test_new_position.x_coordinate) + " Y: " + str(test_new_position.y_coordinate))
+        self.assertEqual(test_position.y_coordinate+1, test_new_position.y_coordinate)
         
+class TestCalculateNewPositionSouth(TestCase):
+    def test_calc_new_position_south(self):
+        #Assumption: this is in the centre of map, not near a boundary
+        ARBITRARY_X = 5
+        ARBITRARY_Y = 5
+        test_map = Map()
+        test_position = Position(ARBITRARY_X, ARBITRARY_Y)
+        test_new_position = test_map.calculateNewPosition(test_position, 's')
+        print("Test Position is X:" + str(test_position.x_coordinate) + " Y: " + str(test_position.y_coordinate))
+        print("New Position is X:" + str(test_new_position.x_coordinate) + " Y: " + str(test_new_position.y_coordinate))
+        self.assertEqual(test_position.y_coordinate-1, test_new_position.y_coordinate)
+
+class TestCalculateNewPositionEast(TestCase):
+    def test_calc_new_position_east(self):
+        #Assumption: this is in the centre of map, not near a boundary
+        ARBITRARY_X = 5
+        ARBITRARY_Y = 5
+        test_map = Map()
+        test_position = Position(ARBITRARY_X, ARBITRARY_Y)
+        test_new_position = test_map.calculateNewPosition(test_position, 'e')
+        print("Test Position is X:" + str(test_position.x_coordinate) + " Y: " + str(test_position.y_coordinate))
+        print("New Position is X:" + str(test_new_position.x_coordinate) + " Y: " + str(test_new_position.y_coordinate))
+        self.assertEqual(test_position.x_coordinate+1, test_new_position.x_coordinate)
+
+class TestCalculateNewPositionWest(TestCase):
+    def test_calc_new_position_west(self):
+        #Assumption: this is in the centre of map, not near a boundary
+        ARBITRARY_X = 5
+        ARBITRARY_Y = 5
+        test_map = Map()
+        test_position = Position(ARBITRARY_X, ARBITRARY_Y)
+        test_new_position = test_map.calculateNewPosition(test_position, 'w')
+        print("Test Position is X:" + str(test_position.x_coordinate) + " Y: " + str(test_position.y_coordinate))
+        print("New Position is X:" + str(test_new_position.x_coordinate) + " Y: " + str(test_new_position.y_coordinate))
+        self.assertEqual(test_position.x_coordinate-1, test_new_position.x_coordinate)

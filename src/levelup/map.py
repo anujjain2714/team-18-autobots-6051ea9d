@@ -19,8 +19,23 @@ class Map:
     def getStartingPosition(self):
         return self.startingPosition
 
-    def calculateNewPosition(self, direction):
-        pass
+    def calculateNewPosition(self, position, direction):
+        new_position = Position(position.x_coordinate, position.y_coordinate)
+        match direction:
+            case 'n':
+                new_position.y_coordinate += 1
+            case 's':
+                new_position.y_coordinate -= 1
+            case 'e':
+                new_position.x_coordinate += 1
+            case 'w':
+                new_position.x_coordinate -= 1
+            case _:
+                pass
+        if self.isPositionValid(new_position):
+            return new_position
+        else:
+            return position
 
 class DummyMap(Map):
 
