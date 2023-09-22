@@ -32,3 +32,10 @@ class TestPositionInvalid(TestCase):
         test_map = Map()
         test_position = Position(ARBITRARY_X, ARBITRARY_Y)
         self.assertFalse(test_map.isPositionValid(test_position))
+
+class TestCalculateNewPositionNorth(TestCase):
+    def test_calc_new_position_north(self):
+        ARBITRARY_X = 5
+        ARBITRARY_Y = 5
+        test_position = Position(ARBITRARY_X, ARBITRARY_Y)
+        
