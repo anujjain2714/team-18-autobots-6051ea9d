@@ -9,4 +9,7 @@ class Character:
 
     def changePosition(self, new_position):
         self.currentPosition = new_position
+    
+    def enterMap(self, map):
+        pass
 
