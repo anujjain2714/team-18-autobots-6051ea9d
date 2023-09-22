@@ -32,3 +32,20 @@ class TestEnterMap(TestCase):
         test_char = Character("")
         test_char.enterMap(test_map)
         self.assertTrue(test_map.isPositionValid(test_char.currentPosition))
+
+class TestEnterMap(TestCase):
+    def test_enter_map(self):
+        test_map = Map()
+        test_char = Character("")
+        test_char.enterMap(test_map)
+        self.assertTrue(test_map.isPositionValid(test_char.currentPosition))
+
+class TestMoveNorth(TestCase):
+    def test_move_north(self):
+        test_map = DummyMap()
+        test_char = Character("")
+        test_char.enterMap(test_map)
+        old_move_count = test_char.moveCount
+        test_char.move('n')
+        self.assertEqual(test_char.currentPosition.y_coordinate,1)
+        self.assertEqual(test_char.moveCount, old_move_count+1)
